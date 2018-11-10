@@ -17,4 +17,7 @@ int filter(int (*test)(void *), void *arr, void *return_arr, int arr_size,
 
 void for_each(void (*apply)(void *), void *arr, int arr_size, int member_size);
 
+void concat(void *head_arr, void *tail_arr, void *return_arr, int head_arr_size,
+            int tail_arr_size, int member_size);
+
 #endif // __ARRAY_FUNCTIONS__

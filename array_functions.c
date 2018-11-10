@@ -25,3 +25,10 @@ int filter(int (*test)(void *), void *arr, void *return_arr, int arr_size,
   }
   return cont;
 }
+
+void concat(void *head_arr, void *tail_arr, void *return_arr, int head_arr_size,
+            int tail_arr_size, int member_size) {
+  memmove(return_arr, head_arr, head_arr_size * member_size);
+  memmove(return_arr + head_arr_size * member_size, tail_arr,
+          tail_arr_size * member_size);
+}

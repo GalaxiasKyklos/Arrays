@@ -33,5 +33,9 @@ int main(void) {
 
   for_each(plus_one, cosa2, ARR_SIZE, sizeof(int));
   print_int_array(cosa2, ARR_SIZE);
+
+  int cosa4[ARR_SIZE + size];
+  concat(cosa2, cosa3, cosa4, ARR_SIZE, size, sizeof(int));
+  print_int_array(cosa4, ARR_SIZE + size);
   return 0;
 }
