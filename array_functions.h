@@ -9,6 +9,10 @@
 //     } \
 //   }
 
-void map(void (*apply)(void *, void *), void *arr, void *return_arr, int arr_size, int member_size, int return_member_size);
+void map(void (*apply)(void *, void *), void *arr, void *return_arr,
+         int arr_size, int member_size, int return_member_size);
+
+int filter(int (*test)(void *), void *arr, void *return_arr,
+           int arr_size, int member_size);
 
 #endif // __ARRAY_FUNCTIONS__

@@ -14,7 +14,8 @@ int from_unsigned_long_int(void *member, char *buffer);
 int from_unsigned_long_long_int(void *member, char *buffer);
 int from_unsigned_short_int(void *member, char *buffer);
 
-void print_array(int (*to_string)(void *, char *), char *buffer, void *arr, int arr_size, int member_size);
+void print_array(int (*to_string)(void *, char *), char *buffer, void *arr,
+                 int arr_size, int member_size);
 
 void print_char_array(char *array, int size);
 void print_double_array(double *array, int size);
@@ -26,7 +27,8 @@ void print_long_long_int_array(long long int *array, int size);
 void print_short_int_array(short int *array, int size);
 void print_unsigned_int_array(unsigned int *array, int size);
 void print_unsigned_long_int_array(unsigned long int *array, int size);
-void print_unsigned_long_long_int_array(unsigned long long int *array, int size);
+void print_unsigned_long_long_int_array(unsigned long long int *array,
+                                        int size);
 void print_unsigned_short_int_array(unsigned short int *array, int size);
 
 #endif // __PRINT_ARRAYS__
