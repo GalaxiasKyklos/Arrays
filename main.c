@@ -1,27 +1,37 @@
 #include "arrays.h"
 #include <stdio.h>
 
-void plus_one(void *a, void *b) {
-  char *ai = a;
-  int *bi = b;
-  *bi = (int)*ai;
+#define ARR_SIZE 4
+
+void to_int(void *a, void *b) {
+  char *ap = a;
+  int *bp = b;
+  *bp = (int)*ap;
 }
 
 int is_a(void *a) {
-  int *ac = (int *)a;
-  return *ac == 'a';
+  int *ap = a;
+  return *ap == 'a';
+}
+
+void plus_one(void *a) {
+  int *ap = a;
+  *ap += 1;
 }
 
 int main(void) {
-  char cosa[] = {'a', 'b', 'c', 'a'};
-  print_char_array(cosa, 4);
+  char cosa[ARR_SIZE] = {'a', 'b', 'c', 'a'};
+  print_char_array(cosa, ARR_SIZE);
 
-  int cosa2[4];
-  map(plus_one, cosa, cosa2, 4, sizeof(char), sizeof(int));
-  print_int_array(cosa2, 4);
+  int cosa2[ARR_SIZE];
+  map(to_int, cosa, cosa2, ARR_SIZE, sizeof(char), sizeof(int));
+  print_int_array(cosa2, ARR_SIZE);
 
-  int cosa3[4];
-  int size = filter(is_a, cosa2, cosa3, 4, sizeof(int));
+  int cosa3[ARR_SIZE];
+  int size = filter(is_a, cosa2, cosa3, ARR_SIZE, sizeof(int));
   print_int_array(cosa3, size);
+
+  for_each(plus_one, cosa2, ARR_SIZE, sizeof(int));
+  print_int_array(cosa2, ARR_SIZE);
   return 0;
 }
