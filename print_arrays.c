@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "arrays.h"
+#include "print_arrays.h"
 
 char _native_buffer[20];
 
