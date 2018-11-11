@@ -32,3 +32,29 @@ void concat(void *head_arr, void *tail_arr, void *return_arr, int head_arr_size,
   memmove(return_arr + head_arr_size * member_size, tail_arr,
           tail_arr_size * member_size);
 }
+
+int index_of(int (*test)(void *), void *arr, int arr_size, int member_size) {
+  for (int i = 0; i < arr_size; i++) {
+    if (test(&(arr[i * member_size]))) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+int some(int (*test)(void *), void *arr, int arr_size, int member_size) {
+  for (int i = 0; i < arr_size; i++) {
+    if (test(&(arr[i * member_size]))) {
+      return 1;
+    }
+  }
+  return 0;
+}
+
+int every(int (*test)(void *), void *arr, int arr_size, int member_size) {
+  int result = 1;
+  for (int i = 0; i < arr_size && result; i++) {
+    result = test(&(arr[i * member_size]));
+  }
+  return result;
+}

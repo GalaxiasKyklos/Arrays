@@ -20,4 +20,16 @@ void for_each(void (*apply)(void *), void *arr, int arr_size, int member_size);
 void concat(void *head_arr, void *tail_arr, void *return_arr, int head_arr_size,
             int tail_arr_size, int member_size);
 
+int index_of(int (*test)(void *), void *arr, int arr_size, int member_size);
+
+int some(int (*test)(void *), void *arr, int arr_size, int member_size);
+
+int every(int (*test)(void *), void *arr, int arr_size, int member_size);
+
+int qsort(int (*compare)(void *, void *), void *arr, int arr_size,
+         int member_size);
+
+int msort(int (*compare)(void *, void *), void *arr, int arr_size,
+         int member_size);
+
 #endif // __ARRAY_FUNCTIONS__
